@@ -1,17 +1,12 @@
 'use client';
 
-import { useSearchParams, usePathname, useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
 import Link from 'next/link';
 import { Search } from 'lucide-react';
-import db from '@/db/db.json';
 
 function SearchInCourses() {
 	const [isFocused, setIsFocused] = useState(false);
-	// const searchParams = useSearchParams();
-	const pathname = usePathname();
-	const { replace } = useRouter();
 
 	const handleFocus = () => {
 		setIsFocused(true);
@@ -21,16 +16,6 @@ function SearchInCourses() {
 		setTimeout(() => {
 			setIsFocused(false);
 		}, 80);
-	};
-
-	const handleSearch = (searchTerm: string) => {
-		// const params = new URLSearchParams(searchParams);
-		// if (searchTerm) {
-		// 	params.set('query', searchTerm);
-		// } else {
-		// 	params.delete('query');
-		// }
-		// replace(`${pathname}?${params.toString()}`);
 	};
 
 	return (
@@ -89,11 +74,5 @@ function SearchInCourses() {
 		</>
 	);
 }
-
-function SearchResult({
-	searchParams,
-}: {
-	searchParams?: { query?: string };
-}) {}
 
 export default SearchInCourses;
