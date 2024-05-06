@@ -1,0 +1,29 @@
+{
+	"courses": [
+		{
+			"id": "78946546",
+			"name": "Course 1",
+			"info": "Information about Course 1"
+		},
+		{
+			"id": "741321",
+			"name": "Course 2",
+			"info": "Information about Course 2"
+		},
+		{
+			"id": "8982613",
+			"name": "Course 3",
+			"info": "Information about Course 3"
+		},
+		{
+			"id": "897846531",
+			"name": "Course 4",
+			"info": "Information about Course 4"
+		},
+		{
+			"id": "1561489489",
+			"name": "Course 5",
+			"info": "Information about Course 5"
+		}
+	]
+}
