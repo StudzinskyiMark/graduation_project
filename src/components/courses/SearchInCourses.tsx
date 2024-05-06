@@ -9,7 +9,7 @@ import db from '@/db/db.json';
 
 function SearchInCourses() {
 	const [isFocused, setIsFocused] = useState(false);
-	const searchParams = useSearchParams();
+	// const searchParams = useSearchParams();
 	const pathname = usePathname();
 	const { replace } = useRouter();
 
@@ -24,13 +24,13 @@ function SearchInCourses() {
 	};
 
 	const handleSearch = (searchTerm: string) => {
-		const params = new URLSearchParams(searchParams);
-		if (searchTerm) {
-			params.set('query', searchTerm);
-		} else {
-			params.delete('query');
-		}
-		replace(`${pathname}?${params.toString()}`);
+		// const params = new URLSearchParams(searchParams);
+		// if (searchTerm) {
+		// 	params.set('query', searchTerm);
+		// } else {
+		// 	params.delete('query');
+		// }
+		// replace(`${pathname}?${params.toString()}`);
 	};
 
 	return (
