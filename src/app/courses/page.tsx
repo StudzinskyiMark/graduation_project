@@ -7,44 +7,88 @@ import {
 	CardHeader,
 	CardTitle,
 } from '@/components/ui/card';
-import axios from 'axios';
-import { useQuery } from '@tanstack/react-query';
-import CoursesService from '@/services/Course.service';
-
-async function getCourseData() {
-	try {
-		const { data: response } = await axios.get(
-			`${process.env.DATABASE_URL}/courses`
-		);
-		return response;
-	} catch {}
-}
+import { Skeleton } from '@/components/ui/skeleton';
+import { useQueryCourseList } from '@/hooks/useQueryCourse';
 
 export default function Course() {
-	// const data = await getCourseData();
-
-	const { isLoading, data, isSuccess } = useQuery({
-		queryKey: ['Course'],
-		queryFn: () => CoursesService.getAll(),
-		select: ({ data }) => data,
-	});
-
-	console.table(data);
+	const { isLoading, data, isSuccess } = useQueryCourseList();
 
 	return (
 		<>
-			<div className="flex gap-5 flex-row flex-wrap justify-center lg:px-28">
-				{/*TODO:PRELOADER*/}
-
+			<div className="flex gap-5 flex-row flex-wrap justify-center lg:px-32 px-2 ">
 				{isLoading ? (
-					<h1>Data loading...</h1>
+					<>
+						<Card className="max-w-96 max-h-40 w-80 max-md:w-96 min-w-72 shadow-md">
+							<CardHeader>
+								<CardTitle>
+									<Skeleton className="w-full h-7 rounded-full" />
+								</CardTitle>
+								<div className=" pt-2 text-ellipsis overflow-hidden whitespace-nowrap space-y-1">
+									<Skeleton className="w-full h-3 rounded-full" />
+									<Skeleton className="w-full h-3 rounded-full" />
+								</div>
+							</CardHeader>
+						</Card>
+						<Card className="max-w-96 max-h-40 w-80 max-md:w-96 min-w-72 shadow-md">
+							<CardHeader>
+								<CardTitle>
+									<Skeleton className="w-full h-7 rounded-full" />
+								</CardTitle>
+								<div className=" pt-2 text-ellipsis overflow-hidden whitespace-nowrap space-y-1">
+									<Skeleton className="w-full h-3 rounded-full" />
+									<Skeleton className="w-full h-3 rounded-full" />
+								</div>
+							</CardHeader>
+						</Card>
+						<Card className="max-w-96 max-h-40 w-80 max-md:w-96 min-w-72 shadow-md">
+							<CardHeader>
+								<CardTitle>
+									<Skeleton className="w-full h-7 rounded-full" />
+								</CardTitle>
+								<div className=" pt-2 text-ellipsis overflow-hidden whitespace-nowrap space-y-1">
+									<Skeleton className="w-full h-3 rounded-full" />
+									<Skeleton className="w-full h-3 rounded-full" />
+								</div>
+							</CardHeader>
+						</Card>
+						<Card className="max-w-96 max-h-40 w-80 max-md:w-96 min-w-72 shadow-md">
+							<CardHeader>
+								<CardTitle>
+									<Skeleton className="w-full h-7 rounded-full" />
+								</CardTitle>
+								<div className=" pt-2 text-ellipsis overflow-hidden whitespace-nowrap space-y-1">
+									<Skeleton className="w-full h-3 rounded-full" />
+									<Skeleton className="w-full h-3 rounded-full" />
+								</div>
+							</CardHeader>
+						</Card>
+						<Card className="max-w-96 max-h-40 w-80 max-md:w-96 min-w-72 shadow-md">
+							<CardHeader>
+								<CardTitle>
+									<Skeleton className="w-full h-7 rounded-full" />
+								</CardTitle>
+								<div className=" pt-2 text-ellipsis overflow-hidden whitespace-nowrap space-y-1">
+									<Skeleton className="w-full h-3 rounded-full" />
+									<Skeleton className="w-full h-3 rounded-full" />
+								</div>
+							</CardHeader>
+						</Card>
+					</>
 				) : isSuccess ? (
-					data.map((course) => (
-						<Card key={course.id} className="w-80 min-w-fit shadow-md">
+					data?.map((course) => (
+						<Card
+							key={course.id}
+							className="max-w-96 max-h-40 w-80 max-md:w-96 min-w-72 shadow-md">
 							<Link href={`/courses/${course.id}`}>
 								<CardHeader>
-									<CardTitle>{course.name}</CardTitle>
-									<CardDescription>{course.info}</CardDescription>
+									<CardTitle className="text-ellipsis overflow-hidden whitespace-nowrap">
+										{course.title || (
+											<Skeleton className="w-full h-7 rounded-full" />
+										)}
+									</CardTitle>
+									<CardDescription className="text-ellipsis overflow-hidden whitespace-nowrap">
+										{course.info}
+									</CardDescription>
 								</CardHeader>
 							</Link>
 						</Card>

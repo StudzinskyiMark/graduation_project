@@ -18,6 +18,7 @@ export function TanStackProvider(props: { children: React.ReactNode }) {
 	return (
 		<QueryClientProvider client={queryClient}>
 			{props.children}
+			{/* <ReactQueryDevtools initialIsOpen={false} /> */}
 		</QueryClientProvider>
 	);
 }

@@ -1,15 +1,18 @@
-import { ICourse } from '@/types/app.interface';
+import { ICourse } from '@/types/Course.interface';
 import axios from 'axios';
 
 class CourseService {
-	private URL = 'http://localhost:3001/courses';
+	private URL = `${process.env.NEXT_PUBLIC_URL}/course`;
 
-	async getById(id: string) {
-		return axios.get<ICourse>(`${this.URL}/${id}`);
+	async getById(CourseId: string | number) {
+		return axios.get<ICourse>(`${this.URL}/${CourseId}`);
 	}
 
 	async getAll() {
-		return axios.get<ICourse[]>(this.URL);
+		return axios.get<ICourse[]>(
+			// 'https://jsonplaceholder.typicode.com/todos?_limit=20'
+			this.URL
+		);
 	}
 }
 

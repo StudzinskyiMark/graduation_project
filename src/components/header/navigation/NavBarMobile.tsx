@@ -6,7 +6,7 @@ function NavBarMobile() {
 
 	return (
 		<>
-			<nav className="fixed left-0 bottom-0 bg-white dark:bg-neutral-950  border-t-2 rounded-md w-full h-20 z-10 p-1.5 flex justify-evenly px-16 pb-8 pt-3 md:hidden">
+			<nav className="fixed left-0 bottom-0 bg-white dark:bg-neutral-950  border-t-2 rounded-md w-full h-20 z-50 p-1.5 flex justify-evenly px-16 pb-8 pt-3 md:hidden">
 				{NavLinks.map((link) => {
 					// console.log(link.icon);
 					return (

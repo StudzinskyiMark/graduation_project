@@ -1,29 +1,105 @@
 {
-	"courses": [
+	"course": [
 		{
 			"id": "78946546",
-			"name": "Course 1",
-			"info": "Information about Course 1"
+			"title": "Software Engineering",
+			"info": "This discipline focuses on the principles, techniques, and processes involved in designing, developing, testing, and maintaining software systems. It covers various methodologies, such as Agile, Waterfall, and DevOps, along with programming languages, software architecture, and project management."
 		},
 		{
 			"id": "741321",
-			"name": "Course 2",
-			"info": "Information about Course 2"
+			"title": "Database Management Systems",
+			"info": "This discipline deals with the design, implementation, and management of databases to efficiently store, retrieve, and manipulate data. It covers relational database concepts, SQL queries, normalization, indexing, and database administration."
 		},
 		{
 			"id": "8982613",
-			"name": "Course 3",
-			"info": "Information about Course 3"
+			"title": "Web Development",
+			"info": "This discipline involves creating dynamic and interactive websites or web applications using programming languages such as HTML, CSS, JavaScript, and frameworks like React, Angular, or Vue.js. It encompasses frontend development, backend development, and web server configuration."
 		},
 		{
 			"id": "897846531",
-			"name": "Course 4",
-			"info": "Information about Course 4"
+			"title": "Cloud Computing",
+			"info": "Cloud computing focuses on the delivery of computing services over the internet, allowing users to access resources such as servers, storage, databases, and software on-demand. This discipline covers cloud architecture, deployment models (public, private, hybrid), virtualization, and cloud security."
 		},
 		{
 			"id": "1561489489",
-			"name": "Course 5",
-			"info": "Information about Course 5"
+			"title": "Big Data Analytics",
+			"info": "Big data analytics involves processing and analyzing large and complex datasets to uncover insights, patterns, and trends that can inform decision-making and business strategies. It covers technologies such as Hadoop, Spark, data mining, data visualization, and predictive analytics."
+		},
+		{
+			"id": "1561489",
+			"title": "Mobile Application Development",
+			"info": "This discipline involves creating software applications specifically designed to run on mobile devices such as smartphones and tablets. It covers mobile app development frameworks, platform-specific development (iOS, Android), mobile UI/UX design, and mobile app testing."
 		}
-	]
+	],
+	"lecture": [
+		{
+			"id": "44945649",
+			"idCourse": "78946546",
+			"title": "Introduction to Software Engineering",
+			"info": ""
+		},
+		{
+			"id": "78561665",
+			"idCourse": "78946546",
+			"title": "Software Development Life Cycle",
+			"info": ""
+		},
+		{
+			"id": "787556799",
+			"idCourse": "78946546",
+			"title": "Requirements Engineering",
+			"info": ""
+		},
+		{
+			"id": "12311648799",
+			"idCourse": "78946546",
+			"title": "Software Design Principles",
+			"info": ""
+		},
+		{
+			"id": "49846651233",
+			"idCourse": "741321",
+			"title": "Lecture 1: Introduction to Databases",
+			"info": "Information about Course 2"
+		},
+		{
+			"id": "49846651233",
+			"idCourse": "741321",
+			"title": "Lecture 2: Relational Database Management Systems",
+			"info": "Information about Course 2"
+		},
+		{
+			"id": "49846651233",
+			"idCourse": "741321",
+			"title": "Lecture 3: SQL Fundamentals",
+			"info": "Information about Course 2"
+		},
+		{
+			"id": "49846651233",
+			"idCourse": "741321",
+			"title": "Lecture 4: Database Design and Normalization",
+			"info": "Information about Course 2"
+		}
+	],
+	"exam": [
+		{
+			"id": "1486",
+			"idCourse": "78946546",
+			"title": "Exams 1",
+			"info": "Information about Exams 1"
+		},
+		{
+			"id": "5498456",
+			"idCourse": "78946546",
+			"title": "Exams 3 ",
+			"info": "Information about Exams 3"
+		},
+		{
+			"id": "4664685",
+			"idCourse": "741321",
+			"title": "Exams 2",
+			"info": "Information about Exams 2"
+		}
+	],
+	"users": []
 }

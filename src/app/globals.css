@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+/* animated gradient bg */
+
 @layer base {
 	:root {
 		--background: 0 0% 100%;
@@ -33,8 +35,33 @@
 		--ring: 0 0% 3.9%;
 
 		--radius: 0.5rem;
-	}
 
+		--secondary-glow: conic-gradient(
+			from 10deg at 50% 50%,
+			#c83232 0deg,
+			#f36087 35deg,
+			#ab6caf 90deg,
+			#97b5da 120deg,
+			#00a6dd 160deg,
+			transparent 360deg
+		);
+
+		--third-glow: conic-gradient(
+			from 90deg at 50% 50%,
+			#ff8b7e 0deg,
+			#de4affcc 100deg,
+			#e24e6b 160deg,
+			#7ed2da 120deg,
+			#1271ffcc 55deg,
+			transparent 360deg
+		);
+
+		--color1: #1271ff;
+		--color2: #dd4aff;
+		--color3: rgb(100, 220, 255);
+		--color4: #c83232;
+		--color5: rgb(180, 180, 50);
+	}
 	.dark {
 		--background: 0 0% 3.9%;
 		--foreground: 0 0% 98%;
@@ -92,5 +119,60 @@
 
 	*::-webkit-scrollbar-thumb:hover {
 		@apply bg-neutral-500;
+	}
+
+	body::before,
+	body::after {
+		content: '';
+		position: absolute;
+		z-index: -100;
+		opacity: 0.8;
+	}
+
+	body::before {
+		background: var(--third-glow);
+		border-radius: 50%;
+		width: 50vw;
+		height: 60vh;
+		margin-left: -300px;
+		filter: blur(90px);
+		top: calc(40vh - 50vw / 2);
+		left: calc(50vw);
+		animation: moveInCircle 90s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
+	}
+	body::after {
+		background: var(--secondary-glow);
+		border-radius: 50%;
+		width: 40vw;
+		height: 40vh;
+		filter: blur(90px);
+		top: calc(70vh - 50vw / 2);
+		left: calc(50vw - 80vw / 2);
+		animation: moveHorizontal 100s cubic-bezier(0.47, 0, 0.745, 0.715)
+			infinite;
+	}
+
+	@keyframes moveInCircle {
+		0% {
+			transform: rotate(0deg) translateX(10%) translateY(0%) scale(0.6);
+		}
+		50% {
+			transform: rotate(180deg) translateX(-30%) translateY(0%) scale(0.8);
+		}
+		100% {
+			transform: rotate(360deg) translateX(10%) translateY(0%) scale(0.6);
+		}
+	}
+
+	@keyframes moveHorizontal {
+		0% {
+			transform: rotate(0deg) translateX(-20%) translateY(-10%) scale(0.7);
+		}
+		50% {
+			transform: rotate(180deg) translateX(10%) translateY(30%) scale(1.3);
+		}
+		100% {
+			transform: rotate(360deg) translateX(-20%) translateY(-10%) scale(0.7);
+		}
 	}
 }

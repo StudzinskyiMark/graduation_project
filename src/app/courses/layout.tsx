@@ -1,5 +1,5 @@
+import CourseNavBar from '@/components/courses/CourseNavBar';
 import SearchInCourses from '@/components/courses/SearchInCourses';
-import TanStackProvider from '@/providers/TanStackProvider';
 
 export default function CourseLayout({
 	children,
@@ -8,9 +8,10 @@ export default function CourseLayout({
 }>) {
 	return (
 		<>
-			<SearchInCourses />
-
-			{children}
+			<CourseNavBar>
+				<SearchInCourses />
+				{children}
+			</CourseNavBar>
 		</>
 	);
 }
